@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Login - MyApp</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<style>
+.btn-main{
+    width:100%;padding:12px;background:#4CAF50;color:white;
+    border:none;border-radius:8px;cursor:pointer;font-weight:bold;
+    transition:all 0.3s ease;
+}
+.btn-main:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 15px rgba(76,175,80,0.8);
+    background:#45a049;
+}
+.btn-secondary{
+    display:inline-block;padding:10px 20px;background:#ff4d4d;
+    color:white;text-decoration:none;border-radius:8px;
+    font-weight:bold;transition:all 0.3s ease;
+}
+.btn-secondary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 10px rgba(135, 9, 9, 0.8);
+    background:#e60000;
+}
+.input-style{
+    width:100%;padding:12px;border:none;border-radius:8px;
+} 
+.password-wrapper{
+    position:relative;
+}
+.password-wrapper input{
+    width:100%;
+    padding:12px 40px 12px 12px;
+    border:none;border-radius:8px;
+}
+.toggle-password{
+    position:absolute;right:12px;top:50%;
+    transform:translateY(-50%);
+    cursor:pointer;font-size:18px;
+    opacity:0.7;transition:0.3s;
+}
+.toggle-password:hover{
+    opacity:1;
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+<div class="overlay"></div>
+
+<div class="hero-content">
+
+<div style="max-width:400px;margin:0 auto;padding:40px;
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(14px);
+border-radius:16px;
+box-shadow:0 12px 45px rgba(0,0,0,0.4);">
+
+<h2 style="text-align:center;margin-bottom:8px;">Login Akun</h2>
+<p style="text-align:center;margin-bottom:25px;opacity:0.85;">
+Masuk untuk melanjutkan 🚀
+</p>
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+<div style="background:rgba(255,0,0,0.2);padding:10px;
+border-radius:8px;margin-bottom:15px;text-align:center;font-size:14px;">
+{{ message }}
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+<form method="POST" autocomplete="off">
+
+<div style="margin-bottom:15px;">
+<input type="text" name="username"
+placeholder="Username"
+required class="input-style">
+</div>
+
+<div style="margin-bottom:20px;" class="password-wrapper">
+<input type="password" name="password"
+id="loginPassword"
+placeholder="Password"
+required>
+<span class="toggle-password"
+onclick="togglePassword('loginPassword', this)">👁</span>
+</div>
+
+<button type="submit" class="btn-main">
+Login
+</button>
+
+</form>
+
+<div style="text-align:center;margin-top:25px;">
+
+<p style="margin-bottom:15px;">
+Belum punya akun?
+<a href="/register"
+style="color:#ffd700;font-weight:bold;text-decoration:none;">
+Daftar di sini
+</a>
+</p>
+
+<a href="/" class="btn-secondary">
+Kembali ke Beranda
+</a>
+
+</div>
+
+</div>
+</div>
+</section>
+
+<script>
+function togglePassword(id, el){
+const input = document.getElementById(id);
+if(input.type === "password"){
+input.type = "text";
+el.textContent = "🙈";
+}else{
+input.type = "password";
+el.textContent = "👁";
+}
+}
+</script>
+
+</body>
+</html>

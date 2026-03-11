@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>MyApp - Modern Platform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="nav-container">
+        <div class="logo">MyApp</div>
+
+        <nav class="nav-menu">
+            <a href="#about">Tentang</a>
+            <a href="#features">Fitur</a>
+            <a href="#contact">Kontak</a>
+            <a href="/login">Login</a>
+            <a href="/register" class="nav-register">Daftar</a>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+        <h1>MyAPP</h1>
+        <p>sistem senang senang sederhana guna menguji fungsionalitas.</p>
+        
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section light">
+    <div class="container">
+        <h2>Tentang Kami</h2>
+        <p>
+            MyApp adalah platform berbasis web yang dirancang untuk memberikan
+            pengalaman pengguna terbaik dengan desain profesional,
+            performa cepat.
+        </p>
+    </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features" class="section dark">
+    <div class="container">
+        <h2>Fitur Unggulan</h2>
+
+        <div class="grid">
+            <div class="card">
+                <h3>Performa Cepat</h3>
+                <p>Struktur ringan dan responsif untuk pengalaman terbaik.</p>
+            </div>
+
+            <div class="card">
+                <h3>Desain Modern</h3>
+                <p>Tampilan elegan seperti website startup profesional.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section light">
+    <div class="container">
+        <h2>Hubungi Kami</h2>
+        <p>Email: admin@myapp.com</p>
+        <p>WhatsApp: 0812-6001-4078</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 MyApp. senang senang aja.</p>
+</footer>
+
+</body>
+</html>

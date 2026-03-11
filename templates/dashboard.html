@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - MyApp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<section class="hero">
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+
+        <div style="
+            max-width:900px;
+            margin:0 auto;
+            padding:40px;
+            background:rgba(255,255,255,0.1);
+            backdrop-filter: blur(12px);
+            border-radius:16px;
+            box-shadow:0 10px 40px rgba(0,0,0,0.4);
+        ">
+
+            <!-- HEADER -->
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:30px;">
+                <div>
+                    <h2>Dashboard</h2>
+                    <p>Halo, {{ username }} 👋</p>
+                </div>
+
+                <a href="/logout"
+                   style="padding:4px 17px; background:#ff4d4d; color:white; text-decoration:none; border-radius:6px;">
+                   Logout
+                </a>
+            </div>
+
+            <!-- CARD TOTAL USER -->
+            <div style="
+                padding:25px;
+                background:rgba(255,255,255,0.15);
+                border-radius:12px;
+                text-align:center;
+            ">
+                <h3>Total Pengguna Terdaftar</h3>
+                <p style="font-size:36px; font-weight:bold;">
+                    {{ total_users }}
+                </p>
+            </div>
+
+            <!-- INFO -->
+            <div style="margin-top:40px;">
+                <h3>Informasi Sistem</h3>
+                <p>
+                    Anda telah berhasil login ke sistem.
+                    Dashboard ini menampilkan jumlah pengguna
+                    yang sudah terdaftar.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+</body>
+</html>
